@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "amx"
+version = "0.1.0"
+description = ""
+authors = ["Kirill Sukharev <kirill@sukharev.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pymodbus = "^3.7.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
