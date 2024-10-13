@@ -217,7 +217,7 @@ DATA_EVENT[IcpOut]
 	    {
 		CALL 'ParseIcpOutRespon_An' (Data.Text);
 		
-		CALL 'DamperRefresh';
+		//CALL 'DamperRefresh';
 	    }
 	}
     }
@@ -246,10 +246,10 @@ DATA_EVENT[IcpIn]
 		
 		CALL 'CheckRelayWallBtns';
 		CALL 'CheckDimWallBtns';
-		CALL 'CheckBlindWallBtns';
-		CALL 'CheckMediaWallBtns';
-		CALL 'CheckIntcomCallBtns';
-		CALL 'CheckLeakSnsrs';
+		//CALL 'CheckBlindWallBtns';
+		//CALL 'CheckMediaWallBtns';
+		//CALL 'CheckIntcomCallBtns';
+		//CALL 'CheckLeakSnsrs';
 	    }
 	    CASE $04:
 	    {

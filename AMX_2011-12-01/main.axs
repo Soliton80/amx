@@ -71,19 +71,19 @@ Dim = 5001:1:1;
 IcpOut = 0:10:1;
 IcpIn = 0:11:1;
 
-Integ = 0:20:1;
+// Integ = 0:20:1;
 
-Intcom = 0:30:1;
+// Intcom = 0:30:1;
 
-Xbmc = 0:40:1;
+// Xbmc = 0:40:1;
 
-Gc = 0:50:1;
+// Gc = 0:50:1;
 
-Komf = 0:60:1;
+// Komf = 0:60:1;
 
-Tshb = 0:71:1;
-Humid  = 0:72:1;
-Gsm = 0:73:1;
+// Tshb = 0:71:1;
+// Humid  = 0:72:1;
+// Gsm = 0:73:1;
 
 
 DEFINE_CONSTANT
@@ -174,27 +174,27 @@ VOLATILE STpStat TpStats[TpsCnt];
 
 #INCLUDE 'dim';
 #INCLUDE 'icp';
-#INCLUDE 'intcom';
-#INCLUDE 'integ';
-#INCLUDE 'xbmc';
-#INCLUDE 'gc';
-#INCLUDE 'tv';
-#INCLUDE 'sat';
-#INCLUDE 'komf';
+// #INCLUDE 'intcom';
+// #INCLUDE 'integ';
+// #INCLUDE 'xbmc';
+// #INCLUDE 'gc';
+// #INCLUDE 'tv';
+// #INCLUDE 'sat';
+// #INCLUDE 'komf';
 #INCLUDE 'dimctrl';
 #INCLUDE 'relayctrl';
-#INCLUDE 'blindctrl';
-#INCLUDE 'leakctrl';
-#INCLUDE 'mediactrl';
-#INCLUDE 'mediawallctrl';
-#INCLUDE 'mediawndctrl';
-#INCLUDE 'tvwndctrl';
-#INCLUDE 'satwndctrl';
-#INCLUDE 'xbmcwndctrl';
-#INCLUDE 'audiowndctrl';
-#INCLUDE 'fmwndctrl';
-#INCLUDE 'climtctrl';
-#INCLUDE 'Scenes';
+// #INCLUDE 'blindctrl';
+// #INCLUDE 'leakctrl';
+// #INCLUDE 'mediactrl';
+// #INCLUDE 'mediawallctrl';
+// #INCLUDE 'mediawndctrl';
+// #INCLUDE 'tvwndctrl';
+// #INCLUDE 'satwndctrl';
+// #INCLUDE 'xbmcwndctrl';
+// #INCLUDE 'audiowndctrl';
+// #INCLUDE 'fmwndctrl';
+// #INCLUDE 'climtctrl';
+// #INCLUDE 'Scenes';
 //#INCLUDE 'Gsm'
 
 
@@ -212,49 +212,3 @@ TpStats[2].CurrPg = 1;
 TpStats[3].CurrPg = 1;
 
 
-DEFINE_EVENT
-
-DATA_EVENT[TpPgs]
-{
-    ONLINE:
-    {
-	TpStats[Data.Device.Number - 10000].TpOnline = true;
-	
-	SEND_COMMAND Data.Device, '@PPX';
-	SEND_COMMAND Data.Device, "'PAGE-', RoomNames[1]";
-	SEND_COMMAND Data.Device, 'PPON-RoomButtons';
-
-	TpStats[Data.Device.Number - 10000].CurrPg = 1;
-
-	CALL 'ClimtPopupShow' (Data.Device);
-
-	IF (IsLeak == true)
-	{
-	    SEND_COMMAND TpLeak, 'PPON-Mask';
-	    SEND_COMMAND TpLeak, 'PPON-LeakWarnMsg';
-	}
-    }
-    
-    OFFLINE:
-    {
-	TpStats[Data.Device.Number - 10000].TpOnline = false;
-    }
-}
-
-
-BUTTON_EVENT[TpPgChns]
-{
-    RELEASE:
-    {
-	SEND_COMMAND Button.Input.Device, '@PPA';
-	SEND_COMMAND Button.Input.Device, "'@PPA-', RoomNames[Button.Input.Channel]";
-	SEND_COMMAND Button.Input.Device, "'PAGE-', RoomNames[Button.Input.Channel]";
-	SEND_COMMAND Button.Input.Device, 'PPON-RoomButtons';
-
-	ON [Button.Input.Device, Button.Input.Channel];
-
-	TpStats[Button.Input.Device.Number - 10000].CurrPg = Button.Input.Channel;
-	
-	CALL 'ClimtPopupShow' (Button.Input.Device);
-    }
-}
