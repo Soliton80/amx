@@ -5,6 +5,27 @@ DEFINE_DEVICE
 
 //device:port:system_number 
 
+AmxConsole = 0:1:0;
+
+Dim = 5001:1:1;
+
+IcpOut = 0:10:1;
+IcpIn = 0:11:1;
+
+// Integ = 0:20:1;
+
+// Intcom = 0:30:1;
+
+// Xbmc = 0:40:1;
+
+// Gc = 0:50:1;
+
+// Komf = 0:60:1;
+
+// Tshb = 0:71:1;
+// Humid  = 0:72:1;
+// Gsm = 0:73:1;
+
 Tp1Pgs = 10001:10:1;
 Tp2Pgs = 10002:10:1;
 Tp3Pgs = 10003:10:1;
@@ -65,35 +86,14 @@ Tp1Gsm = 10001:90:1;
 Tp2Gsm = 10002:90:1;
 Tp3Gsm = 10003:90:1;
 
-
-Dim = 5001:1:1;
-
-IcpOut = 0:10:1;
-IcpIn = 0:11:1;
-
-// Integ = 0:20:1;
-
-// Intcom = 0:30:1;
-
-// Xbmc = 0:40:1;
-
-// Gc = 0:50:1;
-
-// Komf = 0:60:1;
-
-// Tshb = 0:71:1;
-// Humid  = 0:72:1;
-// Gsm = 0:73:1;
-
-
 DEFINE_CONSTANT
 
 INTEGER TpsCnt = 3;
 
 CHAR RoomNames[][20] = {'Index', 'LivingRoom', 'Kitchen', 'Bedroom', 'ChildRoom', 'Cabinet', 'Bathroom', 'Hall'};
 
-CHAR IcpOutIp[] = '192.168.1.102';
-CHAR IcpInIp[] = '192.168.1.101';
+CHAR IcpOutIp[] = '192.168.1.152';
+CHAR IcpInIp[] = '192.168.1.151';
 INTEGER IcpOutPort = 502;
 INTEGER IcpInPort = 502;
 

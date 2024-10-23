@@ -65,7 +65,7 @@ DEFINE_CALL 'TurnOnDimChn' (INTEGER ChnIndx)
 //Установка мощности для канала в 0
 DEFINE_CALL 'TurnOffDimChn' (INTEGER ChnIndx)
 {
-	SEND_STRING 0, "'TurnOffDimChn', ChnIndx"
+	SEND_STRING AmxConsole, "'TurnOffDimChn', ChnIndx"
 	DimChnStats[ChnIndx].ProgPwr = DimChnStats[ChnIndx].CurrPwr;
 	DimChnStats[ChnIndx].CurrPwr = 0;
 	CALL 'TpDimsRefresh';
@@ -104,4 +104,5 @@ DATA_EVENT[Dim]
 		CALL 'TpDimsRefresh';
 	}
 }
+
 

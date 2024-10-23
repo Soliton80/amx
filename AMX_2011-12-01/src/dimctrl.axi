@@ -150,6 +150,7 @@ DimBlcks[ 2].UpBtn.IcpInChnIndx =  65; DimBlcks[ 2].DownBtn.IcpInChnIndx =  66; 
 DimBlcks[ 3].UpBtn.IcpInChnIndx =  97; DimBlcks[ 3].DownBtn.IcpInChnIndx =  98; DimBlcks[ 3].DimChnIndx = 4; // Зал
 DimBlcks[ 4].UpBtn.IcpInChnIndx = 101; DimBlcks[ 4].DownBtn.IcpInChnIndx = 102; DimBlcks[ 4].DimChnIndx = 1; // Кухня
 DimBlcks[ 5].UpBtn.IcpInChnIndx =  89; DimBlcks[ 5].DownBtn.IcpInChnIndx =  90; DimBlcks[ 5].DimChnIndx = 6; // Спальня
+DimBlcks[ 5].UpBtn.IcpInChnIndx =  37; DimBlcks[ 5].DownBtn.IcpInChnIndx =  38; DimBlcks[ 5].DimChnIndx = 6; // Спальня
 DimBlcks[ 6].UpBtn.IcpInChnIndx =  93; DimBlcks[ 6].DownBtn.IcpInChnIndx =  94; DimBlcks[ 6].DimChnIndx = 9; // Спальня (бра 1)
 DimBlcks[ 7].UpBtn.IcpInChnIndx = 117; DimBlcks[ 7].DownBtn.IcpInChnIndx = 119; DimBlcks[ 7].DimChnIndx = 8; // Спальня (бра 2)
 DimBlcks[ 8].UpBtn.IcpInChnIndx = 118; DimBlcks[ 8].DownBtn.IcpInChnIndx = 120; DimBlcks[ 8].DimChnIndx = 7; // Спальня (бра 3)
