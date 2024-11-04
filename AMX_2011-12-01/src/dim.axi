@@ -57,7 +57,6 @@ DEFINE_CALL 'StopDimChnPwrChng' (INTEGER ChnIndx)
 DEFINE_CALL 'TurnOnDimChn' (INTEGER ChnIndx)
 {
 	DimChnStats[ChnIndx].CurrPwr = DimChnStats[ChnIndx].ProgPwr;
-	CALL 'TpDimsRefresh';
 	
 	SEND_STRING Dim, "$A4, $03, ChnIndx - 1, DimChnStats[ChnIndx].ProgPwr, DimSpd_Swtch";
 }
@@ -68,18 +67,35 @@ DEFINE_CALL 'TurnOffDimChn' (INTEGER ChnIndx)
 	SEND_STRING AmxConsole, "'TurnOffDimChn', ChnIndx"
 	DimChnStats[ChnIndx].ProgPwr = DimChnStats[ChnIndx].CurrPwr;
 	DimChnStats[ChnIndx].CurrPwr = 0;
-	CALL 'TpDimsRefresh';
 	
 	SEND_STRING Dim, "$A4, $03, ChnIndx - 1, $00, DimSpd_Swtch";
 }
+//Установка мощности для канала в 100
+DEFINE_CALL 'TurnOnFullDimChn' (INTEGER ChnIndx)
+{
+	SEND_STRING AmxConsole, "'TurnOnDimChn', ChnIndx"
+	DimChnStats[ChnIndx].ProgPwr = DimChnStats[ChnIndx].CurrPwr;
+	DimChnStats[ChnIndx].CurrPwr = 100;
+	
+	SEND_STRING Dim, "$A4, $03, ChnIndx - 1, $64, DimSpd_Swtch"; // $64 is hexadecimal for 100
+}
 
-//Выключить весь свет
+//Выключить весь диммируемый свет
 DEFINE_CALL 'TurnOffAllDimChn' ()
 {
 	INTEGER i;
 	for (i=1; i<=DimChnsCnt; i++)
 	{
 		CALL 'TurnOffDimChn'(i)
+	}
+}
+//Включить весь диммируемый свет
+DEFINE_CALL 'TurnOnAllDimChn' ()
+{
+	INTEGER i;
+	for (i=1; i<=DimChnsCnt; i++)
+	{
+		CALL 'TurnOnFullDimChn'(i)
 	}
 }
 
@@ -101,8 +117,8 @@ DATA_EVENT[Dim]
 	{
 		CALL 'ParseDimRespon' (Data.Text);
 		
-		CALL 'TpDimsRefresh';
 	}
 }
+
 
 

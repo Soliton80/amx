@@ -109,7 +109,7 @@ DEFINE_CALL 'ParseIcpInRespon_Di' (CHAR Respon[])
 			Temp = Temp >> 1;
 			
 			/////////////////////////////////////////////////////////
-			IF (IcpInDiChnVals[i] == 1) SEND_STRING AmxConsole, "'pushed channel - ', ITOA(i)";
+			IF (IcpInDiChnVals[i] == 1) SEND_STRING AmxConsole, "'ParseIcpInRespon_Di channel - ', ITOA(i)";
 			/////////////////////////////////////////////////////////
 		}
 	}
@@ -137,6 +137,7 @@ DEFINE_CALL 'SetIcpOutDiChnVal' (INTEGER ChnIndx, INTEGER ChnVal)
 	// SEND_STRING AmxConsole, "'Call SetIcpOutDiChnVal is not executed yet!'"
 	SEND_STRING IcpOut, "$00, $00, $00, $00, $00, $06, $01, $05, Temp >> 8, Temp, $FF * ChnVal, $00";
 	SEND_STRING AmxConsole, "'Call SetIcpOutDiChnVal is executed!'"
+	// AMX_LOG(AMX_DEBUG, "'Call SetIcpOutDiChnVal is executed!'"); //does not work
 }
 
 
@@ -211,7 +212,7 @@ DATA_EVENT[IcpOut]
 			{
 				CALL 'ParseIcpOutRespon_Di' (Data.Text);
 				
-				CALL 'TpRelaysRefresh';
+				// CALL 'TpRelaysRefresh';
 			}
 			CASE $03:
 			{
@@ -243,7 +244,7 @@ DATA_EVENT[IcpIn]
 			CASE $02:
 			{
 				CALL 'ParseIcpInRespon_Di' (Data.Text);
-				
+				CALL 'CheckSwitchWallBtns';
 				CALL 'CheckRelayWallBtns';
 				CALL 'CheckDimWallBtns';
 				//CALL 'CheckBlindWallBtns';
