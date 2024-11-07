@@ -82,7 +82,7 @@ DEFINE_CALL 'TurnOnAllRelayChn' ()
 DEFINE_CALL 'BedroomLightOff' ()
 {
    CALL 'SetIcpOutDiChnVal' (RelayBlcks[4].RelayIcpOutChnIndx, 0);
-   CAlL 'TurnOffDimChn' (5);
+   CAlL 'TurnOffDimChn' (6);
    CAlL 'TurnOffDimChn' (7);
    CAlL 'TurnOffDimChn' (8);
    CAlL 'TurnOffDimChn' (9);

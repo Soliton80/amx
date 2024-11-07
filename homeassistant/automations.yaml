@@ -1,0 +1,8 @@
+- id: 'turn_off_lights_automation'
+  alias: Turn Off Lights
+  trigger:
+    # Trigger at a specific time
+    platform: time
+    at: '01:00:00'
+  action:
+    - service: rest_command.turn_off_lights

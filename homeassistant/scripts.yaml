@@ -1,0 +1,7 @@
+turn_off_lights_script:
+  sequence:
+    - service: rest_command.turn_off_lights
+
+turn_off_bedroom_lights_script:
+  sequence:
+    - service: rest_command.turn_off_bedroom_lights
