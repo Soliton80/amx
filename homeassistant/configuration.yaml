@@ -12,10 +12,30 @@ rest_command:
     headers:
       Content-Type: 'application/json'
     payload: '{"message": "BedroomLightsTurnOff"}'
+  turn_on_bedroom_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "BedroomLightsTurnOn"}'
 
 # Include automations and scripts
 automation: !include automations.yaml
 script: !include scripts.yaml
+
+# Define input boolean
+input_boolean:
+  bedroom_light_switch:
+    name: Bedroom Light Switch
+    initial: off
+    icon: mdi:light-switch
+
+# Enable HomeKit integration
+homekit:
+  auto_start: true
+  filter:
+    include_entities:
+      - input_boolean.bedroom_light_switch
 
 # Enable debug logging for automations
 logger:

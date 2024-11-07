@@ -87,6 +87,14 @@ DEFINE_CALL 'BedroomLightOff' ()
    CAlL 'TurnOffDimChn' (8);
    CAlL 'TurnOffDimChn' (9);
 }
+DEFINE_CALL 'BedroomLightOn' ()
+{
+   CALL 'SetIcpOutDiChnVal' (RelayBlcks[4].RelayIcpOutChnIndx, 1);
+   CAlL 'TurnOnFullDimChn' (6);
+   CAlL 'TurnOnFullDimChn' (7);
+   CAlL 'TurnOnFullDimChn' (8);
+   CAlL 'TurnOnFullDimChn' (9);
+}
 
 DEFINE_CALL 'TurnOffAllLights' ()
 {

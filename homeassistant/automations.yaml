@@ -6,3 +6,21 @@
     at: '01:00:00'
   action:
     - service: rest_command.turn_off_lights
+    
+- id: 'turn_on_bedroom_lights_automation'
+  alias: Turn On Bedroom Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bedroom_light_switch
+      to: 'on'
+  action:
+    - service: script.turn_on_bedroom_lights_script
+
+- id: 'turn_off_bedroom_lights_automation'
+  alias: Turn Off Bedroom Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.bedroom_light_switch
+      to: 'off'
+  action:
+    - service: script.turn_off_bedroom_lights_script

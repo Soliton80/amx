@@ -74,6 +74,10 @@ DATA_EVENT[dvIPServer]
 			SEND_STRING 0, "'Turninig of bedroom lights', 13"
 			CALL 'BedroomLightOff'();
 		}
+		ELSE IF (FIND_STRING(Data.Text, 'BedroomLightsTurnOn', 1)) {
+			SEND_STRING 0, "'Turninig of bedroom lights', 13"
+			CALL 'BedroomLightOn'();
+		}
 		ELSE {
 			SEND_STRING 0, "'Unknown command', 13"
 		}
