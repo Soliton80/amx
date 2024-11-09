@@ -131,9 +131,9 @@ DEFINE_START
 
 //This section initializes the DimBlcks array with specific channel indices and dimmer channel indices.
 
-DimBlcks[ 1].UpBtn.IcpInChnIndx =  69; DimBlcks[ 1].DownBtn.IcpInChnIndx =  71; DimBlcks[ 1].DimChnIndx = 4; // Зал
+DimBlcks[ 1].UpBtn.IcpInChnIndx =  69; DimBlcks[ 1].DownBtn.IcpInChnIndx =  71; DimBlcks[ 1].DimChnIndx = 4; // Гостиная
 DimBlcks[ 2].UpBtn.IcpInChnIndx =  65; DimBlcks[ 2].DownBtn.IcpInChnIndx =  66; DimBlcks[ 2].DimChnIndx = 1; // Кухня
-DimBlcks[ 3].UpBtn.IcpInChnIndx =  97; DimBlcks[ 3].DownBtn.IcpInChnIndx =  98; DimBlcks[ 3].DimChnIndx = 4; // Зал
+DimBlcks[ 3].UpBtn.IcpInChnIndx =  97; DimBlcks[ 3].DownBtn.IcpInChnIndx =  98; DimBlcks[ 3].DimChnIndx = 4; // Гостиная
 DimBlcks[ 4].UpBtn.IcpInChnIndx = 101; DimBlcks[ 4].DownBtn.IcpInChnIndx = 102; DimBlcks[ 4].DimChnIndx = 1; // Кухня
 DimBlcks[ 5].UpBtn.IcpInChnIndx =  89; DimBlcks[ 5].DownBtn.IcpInChnIndx =  90; DimBlcks[ 5].DimChnIndx = 6; // Спальня
 DimBlcks[ 6].UpBtn.IcpInChnIndx =  37; DimBlcks[ 6].DownBtn.IcpInChnIndx =  38; DimBlcks[ 6].DimChnIndx = 6; // Спальня

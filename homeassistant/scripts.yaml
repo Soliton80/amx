@@ -2,10 +2,53 @@ turn_off_lights_script:
   sequence:
     - service: rest_command.turn_off_lights
 
-turn_off_bedroom_lights_script:
+turn_off_Bedroom_lights_script:
   sequence:
-    - service: rest_command.turn_off_bedroom_lights
+    - service: rest_command.turn_off_Bedroom_lights
+turn_on_Bedroom_lights_script:
+  sequence:
+    - service: rest_command.turn_on_Bedroom_lights
 
-turn_on_bedroom_lights_script:
+turn_off_Kitchen_lights_script:
   sequence:
-    - service: rest_command.turn_on_bedroom_lights
+    - service: rest_command.turn_off_Kitchen_lights
+turn_on_Kitchen_lights_script:
+  sequence:
+    - service: rest_command.turn_on_Kitchen_lights
+
+turn_off_LivingRoom_lights_script:
+  sequence:
+    - service: rest_command.turn_off_LivingRoom_lights
+turn_on_LivingRoom_lights_script:
+  sequence:
+    - service: rest_command.turn_on_LivingRoom_lights
+
+turn_off_Kabinet_lights_script:
+  sequence:
+    - service: rest_command.turn_off_Kabinet_lights
+turn_on_Kabinet_lights_script:
+  sequence:
+    - service: rest_command.turn_on_Kabinet_lights
+
+turn_off_ChildRoom_lights_script:
+  sequence:
+    - service: rest_command.turn_off_ChildRoom_lights
+turn_on_ChildRoom_lights_script:
+  sequence:
+    - service: rest_command.turn_on_ChildRoom_lights
+
+turn_off_Hall_lights_script:
+  sequence:
+    - service: rest_command.turn_off_Hall_lights
+turn_on_Hall_lights_script:
+  sequence:
+    - service: rest_command.turn_on_Hall_lights
+
+turn_off_Bath_lights_script:
+  sequence:
+    - service: rest_command.turn_off_Bath_lights
+turn_on_Bath_lights_script:
+  sequence:
+    - service: rest_command.turn_on_Bath_lights
+
+

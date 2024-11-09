@@ -65,24 +65,81 @@ DATA_EVENT[dvIPServer]
 		ELSE IF (FIND_STRING(Data.Text, 'TurnOffLights', 1)) {
 			SEND_STRING 0, "'Turninig Off all light', 13"
 			CALL 'TurnOffAllLights'();
-          }
+		}
 		ELSE IF (FIND_STRING(Data.Text, 'TurnOnLights', 1)) {
 			SEND_STRING 0, "'Turninig on all light', 13"
 			CALL 'TurnOnAllLights'();
 		}
 		ELSE IF (FIND_STRING(Data.Text, 'BedroomLightsTurnOff', 1)) {
-			SEND_STRING 0, "'Turninig of bedroom lights', 13"
+			SEND_STRING 0, "'Turninig of Bedroom lights', 13"
 			CALL 'BedroomLightOff'();
 		}
 		ELSE IF (FIND_STRING(Data.Text, 'BedroomLightsTurnOn', 1)) {
-			SEND_STRING 0, "'Turninig of bedroom lights', 13"
+			SEND_STRING 0, "'Turninig of Bedroom lights', 13"
 			CALL 'BedroomLightOn'();
 		}
+		ELSE IF (FIND_STRING(Data.Text, 'KitchenLightOff', 1)) {
+			SEND_STRING 0, "'Turninig Off Kitchen lights', 13"
+			CALL 'KitchenLightOff'();
+		}
+		ELSE IF (FIND_STRING(Data.Text, 'KitchenLightOn', 1)) {
+			SEND_STRING 0, "'Turninig on Kitchen lihgts', 13"
+			CALL 'KitchenLightOn'();
+		}
+		
+		ELSE IF (FIND_STRING(Data.Text, 'LivingRoomLightOff', 1)) {
+			SEND_STRING 0, "'Turninig of LivingRoom lights', 13"
+			CALL 'LivingRoomLightOff'();
+		}
+		ELSE IF (FIND_STRING(Data.Text, 'LivingRoomLightOn', 1)) {
+			SEND_STRING 0, "'Turninig of LivingRoom lights', 13"
+			CALL 'LivingRoomLightOn'();
+		}
+		
+		ELSE IF (FIND_STRING(Data.Text, 'KabinetLightOff', 1)) {
+			SEND_STRING 0, "'Turninig of Kabinet lights', 13"
+			CALL 'KabinetLightOff'();
+		}
+		ELSE IF (FIND_STRING(Data.Text, 'KabinetLightOn', 1)) {
+			SEND_STRING 0, "'Turninig of Kabinet lights', 13"
+			CALL 'KabinetLightOn'();
+		}
+		
+		ELSE IF (FIND_STRING(Data.Text, 'ChildRoomLightOff', 1)) {
+			SEND_STRING 0, "'Turninig of ChildRoom lights', 13"
+			CALL 'ChildRoomLightOff'();
+		}
+		ELSE IF (FIND_STRING(Data.Text, 'ChildRoomightOn', 1)) {
+			SEND_STRING 0, "'Turninig of ChildRoom lights', 13"
+			CALL 'ChildRoomLightOn'();
+		}
+		
+		ELSE IF (FIND_STRING(Data.Text, 'HallLightOff', 1)) {
+			SEND_STRING 0, "'Turninig of Hall lights', 13"
+			CALL 'HallLightOff'();
+		}
+		ELSE IF (FIND_STRING(Data.Text, 'HallLightOn', 1)) {
+			SEND_STRING 0, "'Turninig of Hall lights', 13"
+			CALL 'HallLightOn'();
+		}
+		
+		ELSE IF (FIND_STRING(Data.Text, 'BathLightOff', 1)) {
+			SEND_STRING 0, "'Turninig of Bath lights', 13"
+			CALL 'BathLightOff'();
+		}
+		ELSE IF (FIND_STRING(Data.Text, 'BathLightOn', 1)) {
+			SEND_STRING 0, "'Turninig of Bath lights', 13"
+			CALL 'BathLightOn'();
+		}
+		
 		ELSE {
 			SEND_STRING 0, "'Unknown command', 13"
 		}
 	}
 }
+
+
+
 
 
 

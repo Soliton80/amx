@@ -7,20 +7,121 @@
   action:
     - service: rest_command.turn_off_lights
     
-- id: 'turn_on_bedroom_lights_automation'
+- id: 'turn_on_Bedroom_lights_automation'
   alias: Turn On Bedroom Lights
   trigger:
     - platform: state
-      entity_id: input_boolean.bedroom_light_switch
+      entity_id: input_boolean.Bedroom_light_switch
       to: 'on'
   action:
-    - service: script.turn_on_bedroom_lights_script
-
-- id: 'turn_off_bedroom_lights_automation'
+    - service: script.turn_on_Bedroom_lights_script
+- id: 'turn_off_Bedroom_lights_automation'
   alias: Turn Off Bedroom Lights
   trigger:
     - platform: state
-      entity_id: input_boolean.bedroom_light_switch
+      entity_id: input_boolean.Bedroom_light_switch
       to: 'off'
   action:
-    - service: script.turn_off_bedroom_lights_script
+    - service: script.turn_off_Bedroom_lights_script
+
+- id: 'turn_on_Kitchen_lights_automation'
+  alias: Turn On Kitchen Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Kitchen_light_switch
+      to: 'on'
+  action:
+    - service: script.turn_on_Kitchen_lights_script
+- id: 'turn_off_Kitchen_lights_automation'
+  alias: Turn Off Kitchen Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Kitchen_light_switch
+      to: 'off'
+  action:
+    - service: script.turn_off_Kitchen_lights_script
+
+- id: 'turn_on_LivingRoom_lights_automation'
+  alias: Turn On LivingRoom Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.LivingRoom_light_switch
+      to: 'on'
+  action:
+    - service: script.turn_on_LivingRoom_lights_script
+- id: 'turn_off_LivingRoom_lights_automation'
+  alias: Turn Off LivingRoom Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.LivingRoom_light_switch
+      to: 'off'
+  action:
+    - service: script.turn_off_LivingRoom_lights_script
+
+- id: 'turn_on_Kabinet_lights_automation'
+  alias: Turn On Kabinet Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Kabinet_light_switch
+      to: 'on'
+  action:
+    - service: script.turn_on_Kabinet_lights_script
+- id: 'turn_off_Kabinet_lights_automation'
+  alias: Turn Off Kabinet Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Kabinet_light_switch
+      to: 'off'
+  action:
+    - service: script.turn_off_Kabinet_lights_script
+
+- id: 'turn_on_Childroom_lights_automation'
+  alias: Turn On Childroom Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Childroom_light_switch
+      to: 'on'
+  action:
+    - service: script.turn_on_Childroom_lights_script
+- id: 'turn_off_Childroom_lights_automation'
+  alias: Turn Off Childroom Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Childroom_light_switch
+      to: 'off'
+  action:
+    - service: script.turn_off_Childroom_lights_script
+
+- id: 'turn_on_Hall_lights_automation'
+  alias: Turn On Hall Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Hall_light_switch
+      to: 'on'
+  action:
+    - service: script.turn_on_Hall_lights_script
+- id: 'turn_off_Hall_lights_automation'
+  alias: Turn Off Hall Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Hall_light_switch
+      to: 'off'
+  action:
+    - service: script.turn_off_Hall_lights_script
+
+- id: 'turn_on_Bath_lights_automation'
+  alias: Turn On Bath Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Bath_light_switch
+      to: 'on'
+  action:
+    - service: script.turn_on_Bath_lights_script
+- id: 'turn_off_Bath_lights_automation'
+  alias: Turn Off Bath Lights
+  trigger:
+    - platform: state
+      entity_id: input_boolean.Bath_light_switch
+      to: 'off'
+  action:
+    - service: script.turn_off_Bath_lights_script

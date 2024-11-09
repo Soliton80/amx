@@ -6,18 +6,100 @@ rest_command:
     headers:
       Content-Type: 'application/json'
     payload: '{"message": "TurnOffLights"}'
-  turn_off_bedroom_lights:
+  turn_off_Bedroom_lights:
     url: 'http://213.171.3.3:8000/send-message'
     method: POST
     headers:
       Content-Type: 'application/json'
     payload: '{"message": "BedroomLightsTurnOff"}'
-  turn_on_bedroom_lights:
+  turn_on_Bedroom_lights:
     url: 'http://213.171.3.3:8000/send-message'
     method: POST
     headers:
       Content-Type: 'application/json'
     payload: '{"message": "BedroomLightsTurnOn"}'
+
+  turn_off_Kitchen_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "KitchenLightOff"}'
+  turn_on_Kitchen_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "KitchenLightOn"}'
+
+  turn_off_LivingRoom_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "LivingRoomLightOff"}'
+  turn_on_LivingRoom_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "LivingRoomightOn"}'
+
+
+  turn_off_Kabinet_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "KabinetLightOff"}'
+  turn_on_Kabinet_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "KabinetightOn"}'
+
+
+  turn_off_ChildRoom_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "ChildRoomLightOff"}'
+  turn_on_ChildRoom_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "ChildRoomightOn"}'
+
+
+  turn_off_Hall_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "HallLightOff"}'
+  turn_on_Hall_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "HallightOn"}'
+
+
+  turn_off_Bath_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "BathLightOff"}'
+  turn_on_Bath_lights:
+    url: 'http://213.171.3.3:8000/send-message'
+    method: POST
+    headers:
+      Content-Type: 'application/json'
+    payload: '{"message": "BathightOn"}'
 
 # Include automations and scripts
 automation: !include automations.yaml
@@ -25,8 +107,42 @@ script: !include scripts.yaml
 
 # Define input boolean
 input_boolean:
-  bedroom_light_switch:
+  Bedroom_light_switch:
     name: Bedroom Light Switch
+    initial: off
+    icon: mdi:light-switch
+
+  Kitchen_light_switch:
+    name: Kitchen Light Switch
+    initial: off
+    icon: mdi:light-switch
+    
+  LivingRoom_light_switch:
+    name: LivingRoom Light Switch
+    initial: off
+    icon: mdi:light-switch
+
+    
+  Kabinet_light_switch:
+    name: Kabinet Light Switch
+    initial: off
+    icon: mdi:light-switch
+
+    
+  ChildRoom_light_switch:
+    name: ChildRoom Light Switch
+    initial: off
+    icon: mdi:light-switch
+
+    
+  Hall_light_switch:
+    name: Hall Light Switch
+    initial: off
+    icon: mdi:light-switch
+
+    
+  Bath_light_switch:
+    name: Bath Light Switch
     initial: off
     icon: mdi:light-switch
 
@@ -35,7 +151,13 @@ homekit:
   auto_start: true
   filter:
     include_entities:
-      - input_boolean.bedroom_light_switch
+      - input_boolean.Bedroom_light_switch
+      - input_boolean.Kitchen_light_switch
+      - input_boolean.LivingRoom_light_switch
+      - input_boolean.Kabinet_light_switch
+      - input_boolean.ChildRoom_light_switch
+      - input_boolean.Hall_light_switch
+      - input_boolean.Bath_light_switch
 
 # Enable debug logging for automations
 logger:
